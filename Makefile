@@ -11,12 +11,9 @@ SOURCEDIR     = doc
 BUILDDIR      = _readthedocs
 export DJANGOVERSION = 4.2
 
-GRAPH_MODEL_APP=-I profile_api
-GRAPH_MODEL_APP=-g
-
 PYTHON=pdm run
 PYROOT=cd `pdm info --where`
-MANAGE=cd `pdm info --where`/src && $(PYTHON) manage.py
+MANAGE=cd `pdm info --where`/bookr_server && $(PYTHON) manage.py
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -44,6 +41,4 @@ django-ref:
 render-model: # Generate a rendering of the models for each app using the Django extensions
 	@echo Generating global model $(PROJECT_ROOT)/doc/apps/global/images/models.png
 	$(MANAGE) graph_models -a -g -o $(PROJECT_ROOT)/doc/apps/global/images/models.png
-	@echo Generating profile-api model $(PROJECT_ROOT)/doc/apps/profile-api/images/models.png
-	$(MANAGE) graph_models -a $(GRAPH_MODEL_APP) -o $(PROJECT_ROOT)/doc/apps/profile-api/images/models.png
 

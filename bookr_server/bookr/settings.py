@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Additional third party application applications
+    "django_extensions",  # A series of extensions for Django
+    "rest_framework",  # Add the rest framework
+    "rest_framework.authtoken",  # add support for Token
+    "drf_spectacular",
+    # Custom apps
+    "reviews",
 ]
 
 MIDDLEWARE = [
@@ -123,3 +130,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# See documentation on Models
+GRAPH_MODELS = {
+    "all_applications": True,
+    "group_models": True,
+}

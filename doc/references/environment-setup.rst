@@ -7,10 +7,32 @@ Environment Setup
 
 This chapter assumes that you do not have PDM, vagrant and virtual box installed on your machine.
 
+Development Tools
+=================
+
+* sqlite3
+
+    Required to run the django database shell ``❯ pdm run manage.py dbshell``
+
+    .. code-block:: shell
+
+        ❯ sudo apt install sqlite3
+
+* graphviz
+
+    Graphviz is required to generate a graph from the models. This can be done my calling
+    ``❯ make render-model``
+
+    .. code-block:: shell
+
+        ❯ sudo apt install graphviz # binaries
+        ❯ sudo apt install graphviz-dev # Headers to build the django-extensions
+
+
 Installing PDM
 ==============
 
-following the instructions provided on `the PDM main documentation <https://pdm.fming.dev/latest/#installation>`_
+follow the instructions provided on `the PDM main documentation <https://pdm.fming.dev/latest/#installation>`_
 
 Installing Vagrant && Virtual Box
 =================================

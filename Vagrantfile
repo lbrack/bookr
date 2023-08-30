@@ -37,6 +37,6 @@ Vagrant.configure("2") do |config|
      echo "# PDM_INSTALLED END" >> /home/vagrant/.bashrc
     fi
     runuser -l vagrant -c 'export PATH=/home/vagrant/.local/bin:$PATH;cd /vagrant;pdm venv remove --yes vagrant;pdm venv create --force --name vagrant 3.8;pdm use --venv vagrant'
-    runuser -l vagrant -c 'export PATH=/home/vagrant/.local/bin:$PATH;cd /vagrant;pdm install'
+    runuser -l vagrant -c 'export PATH=/home/vagrant/.local/bin:$PATH;cd /vagrant;pdm install --prod'
   SHELL
 end

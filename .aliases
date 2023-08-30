@@ -2,15 +2,17 @@
 # An alias to call python instead of having to call pdm run all the time.
 alias python='pdm run '
 alias pyroot='cd `pdm info --where`'
+export PROJECT_NAME=bookr_server
+export SOURCE_ROOT=`pdm info --where`/${PROJECT_NAME}
 
 # Django manage
-alias manage='pushd `pdm info --where`/src; python manage.py '
+alias manage="cd ${SOURCE_ROOT}; python manage.py "
 if [[ $(hostname -s) =~ ^ubuntu.*$ ]]; then
     echo VAGRANT SERVER `hostname -s`
     alias runserver='echo "RUNNING ON `hostname -s`"; manage runserver 0.0.0.0:8000'
 else
     echo DEV HOST `hostname -s`
-    alias runserver='echo "RUNNING ON `hostname -s`" ;vagrant ssh -c "cd /vagrant/src; pdm run manage.py runserver 0.0.0.0:8000"'
+    alias runserver='echo "RUNNING ON VAGRANT STARTED FROM `hostname -s`" ;vagrant ssh -c "cd /vagrant/${PROJECT_NAME}; pdm run manage.py runserver 0.0.0.0:8000"'
 fi
 
 

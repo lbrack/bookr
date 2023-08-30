@@ -170,8 +170,8 @@ Building Documentation
 ======================
 
 The documentation is built using Sphinx and ReST. It is built on every git push using
-red the docs (https://readthedocs.org/projects/profile-rest-api/) and the documentation
-is visible at https://profile-rest-api.readthedocs.io/en/latest/.
+red the docs (https://readthedocs.org/projects/bookr/) and the documentation
+is visible at https://bookr.readthedocs.io/en/latest/.
 
 In order to cross reference Django documentation, interpshinx is being used. There is however
 a bug which prevents us from refering to the inventory url directly. Instead, the inventory file

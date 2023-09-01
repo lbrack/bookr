@@ -1,7 +1,5 @@
 .. include:: ./links.rst
-
 .. _project-setup:
-
 ## setting up workspace
 
 ```

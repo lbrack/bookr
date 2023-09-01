@@ -1,5 +1,4 @@
 .. include:: ./links.rst
-
 .. _api-doc:
 
 API Documentation

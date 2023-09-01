@@ -1,5 +1,4 @@
 .. include:: ./links.rst
-
 .. _environment-setup:
 
 Environment Setup

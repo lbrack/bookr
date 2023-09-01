@@ -7,6 +7,13 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sphinx_rtd_theme
+import pathlib
+import warnings
+
+DOC_ROOT = pathlib.Path(__file__).parent
+AUTO_GEN_DIR = DOC_ROOT / "autogen"
+PROJECT_ROOT = DOC_ROOT.parent
+SPHINX_APIDOC = "pdm run sphinx-apidoc"
 
 project = "Bookr"
 copyright = "2023, Laurent Brack"
@@ -148,3 +155,19 @@ html_static_path = ["_static"]
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = project + "-doc"
+
+
+def setup(app):
+    """Forces the auto generation of the documentation at build time."""
+    warnings.warn(
+        "For some reason generating the autodoc doesn't work because of the way the paths are setup"
+    )
+    return
+    # if not AUTO_GEN_DIR.is_dir():
+    #     os.mkdir(AUTO_GEN_DIR)
+    # os.system(
+    #     f"{SPHINX_APIDOC} -f -T -o {DOC_ROOT}/autogen {PROJECT_ROOT}/bookr_server/bookr"
+    # )
+    # os.system(
+    #     f"{SPHINX_APIDOC} -f -T -o {DOC_ROOT}/autogen {PROJECT_ROOT}/bookr_server/reviews"
+    # )

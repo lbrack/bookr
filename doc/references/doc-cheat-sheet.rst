@@ -1,5 +1,4 @@
 .. include:: ./links.rst
-
 .. _doc-cheat-sheet:
 
 Documentation Cheat Sheet

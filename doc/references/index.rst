@@ -9,10 +9,10 @@ References
 
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 3
    :caption: Contents:
 
    api-doc
    environment-setup
+   pycharm-setup
    doc-cheat-sheet

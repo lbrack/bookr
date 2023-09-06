@@ -57,3 +57,7 @@ def book_list(request):
 
     context = {"book_list": book_list}
     return render(request, "reviews/book-list.html", context)
+
+
+def dash_proto(request):
+    return render(request, "reviews/dash-proto.html")

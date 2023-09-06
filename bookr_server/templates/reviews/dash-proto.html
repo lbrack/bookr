@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{%load plotly_dash%}
+<!-- https://django-plotly-dash.readthedocs.io/en/latest/template_tags.html?highlight=DjangoDash#the-plotly-app-bootstrap-template-tag -->
+{%plotly_app_bootstrap name="SimpleExample" %}
+
+{% endblock %}

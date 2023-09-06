@@ -19,6 +19,9 @@
       .navbar-brand {
         font-size: 25px;
       }
+      .main-div {
+         height: 100vh;
+      }
     </style>
   </head>
   <body>
@@ -30,8 +33,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/books/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/list">Home <span class="sr-only">(current)</span></a>
               </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/dash">Dash<span class="sr-only">(current)</span></a>
+              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Logout</a>
               </li>
@@ -42,17 +49,20 @@
             </form>
           </div>
         </nav>
+        <div class="main-div" id="DashAppDiv">
          {% block content %}
-        <h1>Welcome to Bookr!</h1>
-        {% endblock %}
+         <h1>Welcome to Bookr!</h1>
+         {% endblock %}
+        </div>
   <!-- Copyright -->
+  <!--
   <footer class="page-footer font-small blue">
-    <div class="footer-copyright text-center py-3">&copy;© 2022 Copyright:
-      <a href="https://www.packtpub.com"> Packt Publications</a>
-      <p>Website by: Packt Publications</p>
-      <p>Contact information: <a href="mailto:email@example.com">email@example.com</a></p>
+    <div class="footer-copyright text-center py-3">&copy;© 2023 Copyright:
+      <p>Website by: Laurent Brack</p>
+      <p>Contact information: <a href="mailto:laurent.brack@gmail.com">laurent.brack@gmail.com</a></p>
     </div>
   </footer>
-  <!-- Copyright -->
+  -->
+<!-- Copyright -->
   </body>
 </html>

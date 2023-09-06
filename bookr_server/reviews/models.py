@@ -48,6 +48,14 @@ class Contributor(models.Model):
 
 
 class BookContributor(models.Model):
+    """This is a Junction Table for a many to many relationship
+    between one or more books and one or more contributors.
+
+    This table does not need to be explicitly created (in this
+    case we want to add the contributor type in the relationship).
+
+    """
+
     class ContributionRole(models.TextChoices):
         AUTHOR = "AUTHOR", "Author"
         CO_AUTHOR = "CO_AUTHOR", "Co-Author"

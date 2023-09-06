@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import pathlib
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,6 +24,10 @@ SECRET_KEY = "django-insecure-4dlh$f5l^t1h#&7)cm(c8fe(ds*@@@w!s5$et_^g^%942f@^d*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Enables the use of Frame within the HTML documents
+# https://django-plotly-dash.readthedocs.io/en/latest/installation.html
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ALLOWED_HOSTS = [
     "*"
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
     "django_extensions",  # A series of extensions for Django
     "rest_framework",  # Add the rest framework
     "rest_framework.authtoken",  # add support for Token
+    "django_plotly_dash.apps.DjangoPlotlyDashConfig",
     "drf_spectacular",
     # Custom apps
     "reviews",
@@ -56,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_plotly_dash.middleware.BaseMiddleware",
 ]
 
 ROOT_URLCONF = "bookr.urls"
@@ -63,7 +69,7 @@ ROOT_URLCONF = "bookr.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [pathlib.Path(BASE_DIR).joinpath("templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
